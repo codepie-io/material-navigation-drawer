@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Drawer | Material Design | CodeArtisan</title>
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Drawer | Material Design | CodeArtisan">
+    <meta name="theme-color" content="#4caf50">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Navigation Drawer">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#43a047">
+
+    <!-- Tile icon for Win8 -->
+    <meta name="msapplication-TileColor" content="#4caf50">
+    <meta name="msapplication-navbutton-color" content="#43a047">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Material+Icons' rel='stylesheet' type='text/css'>
+    <link href="css/app.css" rel="stylesheet">
+    <link href="css/drawer.css" rel="stylesheet">
+    <link href="css/docs.css" rel="stylesheet">
+    <link href="vendor/highlight/styles/vs.css" rel="stylesheet">
+</head>
+<body class="has-fixed-header">
+
+<aside class="md-drawer" id="drawer-1">
+    <div class="md-drawer__shadow"></div>
+    <div class="md-drawer__surface">
+        <header class="md-drawer-header">
+            <div class="md-drawer-header__avatar-wrapper">
+                <button class="md-button md-button--fab md-button--primary md-avatar md-avatar--big">
+                    <i class="material-icons">face</i>
+                </button>
+                <button class="md-button md-button--fab md-button--primary md-avatar md-avatar--mini">
+                    <i class="material-icons">face</i>
+                </button>
+            </div>
+            <div class="md-drawer-header__text-wrapper">
+                <div class="md-drawer-header__title">
+                    Jonathan Lee
+                </div>
+                <div class="md-drawer-header__subtitle">
+                    heyfromjonathan@gmail.com
+                </div>
+                <div class="md-drawer-header__button">
+                    <button class="md-button md-button--icon">
+                        <i class="material-icons">
+                            arrow_drop_down
+                        </i>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class="md-drawer-divider"></div>
+        <div class="md-drawer-scroll">
+            <div class="md-drawer-scroll__wrapper">
+                <div class="md-drawer-navigation">
+                    <button class="md-button md-drawer-navigation__item has-icon is-active">
+                        <i class="material-icons">move_to_inbox</i>
+                        <span>Inbox</span>
+                    </button>
+                    <button class="md-button md-drawer-navigation__item has-icon">
+                        <i class="material-icons">drafts</i>
+                        <span>Drafts</span>
+                    </button>
+                    <div class="md-drawer-divider"></div>
+                    <div class="md-drawer-navigation__item md-drawer-header__subtitle">
+                        Subheader
+                    </div>
+                    <button class="md-button md-drawer-navigation__item has-icon">
+                        <i class="material-icons">email</i>
+                        <span>All mails</span>
+                    </button>
+                    <button class="md-button md-drawer-navigation__item has-icon">
+                        <i class="material-icons">delete</i>
+                        <span>Trash</span>
+                    </button>
+                    <button class="md-button md-drawer-navigation__item has-icon">
+                        <i class="material-icons">info</i>
+                        <span>Spam</span>
+                    </button>
+                    <div class="md-drawer-divider"></div>
+                    <button class="md-button md-drawer-navigation__item has-icon">
+                        <i class="material-icons">settings</i>
+                        <span>Settings</span>
+                    </button>
+                    <button class="md-button md-drawer-navigation__item has-icon">
+                        <i class="material-icons">announcement</i>
+                        <span>Send feedback</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<header class="md-header md-header--primary is-fixed is-casting-shadow md-header--has-menu-button">
+    <a class="md-header__menu-button md-button--icon" href="javascript:;" data-toggle="drawer" data-target="#drawer-1">
+        <i class="material-icons">menu</i>
+    </a>
+    <div class="md-header__row">
+        <div class="hidden md-header__title"> Drawer </div>
+        <div class="md-layout-spacer"></div>
+        <span>meow</span>
+    </div>
+</header>
+
+<section class="" id="app">
+    <div class="md-container">
+        <div class="md-row">
+            <div class="md-col md-col--12">
+                Lorem ipsum dummy text..
+                Permanent navigation drawers are always visible and pinned to the left edge, at the same elevation as the content or background. They cannot be closed.
+
+                The threshold for pinning is calculated using these minimum values:
+
+                1. Side nav width
+                2. Content width
+                3. Content padding
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="js/jquery.js"></script>
+<script src="vendor/highlight/highlight.pack.js"></script>
+<script src="js/drawer.js"></script>
+<script>
+    $(function(){
+       $('#drawer-1').MaterialDrawer({
+           permanent: true,
+           fullHeight: false
+       })
+    });
+</script>
+</body>
+</html>

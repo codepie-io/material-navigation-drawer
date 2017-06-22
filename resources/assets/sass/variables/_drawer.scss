@@ -1,0 +1,31 @@
+@import "color-theme";
+
+// ==========  Drawer  ========== //
+
+$layout-drawer-bg-color: unquote("rgb(#{$color-white})") !default;
+$layout-drawer-bg-dark-color: unquote("rgb(#{$palette-blue-grey-900})") !default;
+$layout-drawer-border-color: unquote("rgb(#{$palette-grey-300})") !default;
+$layout-text-color: unquote("rgb(#{$palette-grey-800})") !default;
+$layout-text-light-color: unquote("rgb(#{$color-white})") !default;
+$layout-drawer-navigation-color: unquote("rgba(#{$color-black},.87)") !default;
+$layout-drawer-dark-navigation-color: unquote("rgb(#{$color-white})") !default;
+$layout-drawer-navigation-icon-color: unquote("rgba(#{$color-black},.54)") !default;
+$layout-drawer-dark-navigation-icon-color: unquote("rgba(#{$color-white},.70)") !default;
+$layout-drawer-navigation-link-active-background: unquote("rgb(#{$palette-grey-50})") !default;
+$layout-drawer-navigation-link-active-color: unquote("rgb(#{$color-primary})") !default;
+
+$layout-header-desktop-baseline: 80px !default;
+$layout-desktop-header-height: 64px !default;
+$layout-mobile-header-height: 56px !default;
+$layout-header-mobile-baseline: 72px !default;
+$layout-header-mobile-indent: 16px !default;
+$layout-header-desktop-indent: 40px !default;
+$layout-nav-color: unquote("rgba(#{$color-black}, 0.12)") !default;
+
+$layout-drawer-narrow: 280px !default;
+$layout-drawer-wide: 320px !default;
+$layout-drawer-width: $layout-drawer-wide !default;
+$layout-drawer-profile-bg-color: unquote("rgb(#{$color-primary})") !default;
+
+//layout
+$layout-screen-size-threshold: 959px !default;
