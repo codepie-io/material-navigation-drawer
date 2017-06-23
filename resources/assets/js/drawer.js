@@ -39,7 +39,8 @@
             temporary: true,
             persistent: false,
             mini: false,
-            touch: true
+            touch: true,
+            miniVariant: false
         };
 
         MaterialDrawer.prototype.Classes_ = {
@@ -51,6 +52,7 @@
             BODY_PERMANENT: 'has-permanent-drawer',
             PERMANENT: 'md-drawer--permanent',
             PERMANENT_FULL_HEIGHT: 'md-drawer--permanent-full-height',
+            PERMANENT_MINI_VARIANT: 'md-drawer--permanent-mini-variant',
             BODY_PERMANENT_FULL_HEIGHT: 'has-permanent-drawer--full-height',
             PERMANENT_FLOATING: 'has-permanent-floating-drawer'
         };
@@ -121,6 +123,9 @@
                     if(this.config.fullHeight){
                         $body.addClass(this.Classes_.BODY_PERMANENT_FULL_HEIGHT);
                         this.$drawer_.addClass(this.Classes_.PERMANENT_FULL_HEIGHT)
+                    }
+                    if(this.config.miniVariant){
+                        this.$drawer_.addClass(this.Classes_.PERMANENT_MINI_VARIANT)
                     }
                 }
             }else{

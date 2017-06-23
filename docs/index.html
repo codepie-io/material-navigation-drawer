@@ -35,7 +35,7 @@
 <aside class="md-drawer" id="drawer-1">
     <div class="md-drawer__shadow"></div>
     <div class="md-drawer__surface">
-        <header class="md-drawer-header">
+        <header class="hidden md-drawer-header">
             <div class="md-drawer-header__avatar-wrapper">
                 <button class="md-button md-button--fab md-button--primary md-avatar md-avatar--big">
                     <i class="material-icons">face</i>
@@ -66,11 +66,11 @@
                 <div class="md-drawer-navigation">
                     <button class="md-button md-drawer-navigation__item has-icon is-active">
                         <i class="material-icons">move_to_inbox</i>
-                        <span>Inbox</span>
+                        <span class="md-drawer-navigation__display-name">Inbox</span>
                     </button>
                     <button class="md-button md-drawer-navigation__item has-icon">
                         <i class="material-icons">drafts</i>
-                        <span>Drafts</span>
+                        <span class="md-drawer-navigation__display-name">Drafts</span>
                     </button>
                     <div class="md-drawer-divider"></div>
                     <div class="md-drawer-navigation__item md-drawer-header__subtitle">
@@ -78,24 +78,24 @@
                     </div>
                     <button class="md-button md-drawer-navigation__item has-icon">
                         <i class="material-icons">email</i>
-                        <span>All mails</span>
+                        <span class="md-drawer-navigation__display-name">All mails</span>
                     </button>
                     <button class="md-button md-drawer-navigation__item has-icon">
                         <i class="material-icons">delete</i>
-                        <span>Trash</span>
+                        <span class="md-drawer-navigation__display-name">Trash</span>
                     </button>
                     <button class="md-button md-drawer-navigation__item has-icon">
                         <i class="material-icons">info</i>
-                        <span>Spam</span>
+                        <span class="md-drawer-navigation__display-name">Spam</span>
                     </button>
                     <div class="md-drawer-divider"></div>
                     <button class="md-button md-drawer-navigation__item has-icon">
                         <i class="material-icons">settings</i>
-                        <span>Settings</span>
+                        <span class="md-drawer-navigation__display-name">Settings</span>
                     </button>
                     <button class="md-button md-drawer-navigation__item has-icon">
                         <i class="material-icons">announcement</i>
-                        <span>Send feedback</span>
+                        <span class="md-drawer-navigation__display-name">Send feedback</span>
                     </button>
                 </div>
             </div>
@@ -110,22 +110,14 @@
     <div class="md-header__row">
         <div class="hidden md-header__title"> Drawer </div>
         <div class="md-layout-spacer"></div>
-        <span>meow</span>
     </div>
 </header>
 
 <section class="" id="app">
     <div class="md-container">
         <div class="md-row">
-            <div class="md-col md-col--12">
-                Lorem ipsum dummy text..
-                Permanent navigation drawers are always visible and pinned to the left edge, at the same elevation as the content or background. They cannot be closed.
+            <div class="md-col layout-m-t-2 md-col--12">
 
-                The threshold for pinning is calculated using these minimum values:
-
-                1. Side nav width
-                2. Content width
-                3. Content padding
             </div>
         </div>
     </div>
@@ -138,7 +130,8 @@
     $(function(){
        $('#drawer-1').MaterialDrawer({
            permanent: true,
-           fullHeight: false
+           fullHeight: false,
+           miniVariant: true
        })
     });
 </script>
