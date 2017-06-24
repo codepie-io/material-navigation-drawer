@@ -97,6 +97,13 @@
 
   }
 
+  &--swiping{
+    z-index: 20;
+    .md-drawer__shadow{
+      z-index: 4;
+    }
+  }
+
   &--permanent{
     @media screen and (min-width: $layout-screen-size-threshold + 1px) {
       padding-top: 64px;
@@ -350,11 +357,14 @@
 
 .md-drawer-swipe{
   position: fixed;
-  top:112px;
+  top:0;
   left:0;
   width: 16px;
-  height: calc(100vh - 112px);
+  height: 100vh;
   z-index: 2;
+  @media screen and (min-width: $layout-screen-size-threshold + 1px) {
+    display: none;
+  }
 }
 
 body.has-permanent-drawer{
