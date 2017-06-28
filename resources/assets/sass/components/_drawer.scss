@@ -105,8 +105,8 @@
   }
 
   &--permanent{
-    width: auto;
     @media screen and (min-width: $layout-screen-size-threshold + 1px) {
+      width: auto;
       padding-top: 64px;
       z-index: 1;
       &[data-top="56"]{
