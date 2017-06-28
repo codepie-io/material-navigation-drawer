@@ -105,9 +105,10 @@
   }
 
   &--permanent{
+    width: auto;
     @media screen and (min-width: $layout-screen-size-threshold + 1px) {
       padding-top: 64px;
-      z-index: 10;
+      z-index: 1;
       &[data-top="56"]{
         padding-top: 56px;
       }
@@ -190,7 +191,7 @@
 
       &.md-drawer--visible{
         & .md-drawer__surface{
-          width: inherit;
+          width: $layout-drawer-narrow;
         }
         & .md-drawer-navigation__display-name{
           opacity: 1;
@@ -377,6 +378,12 @@ body.has-permanent-drawer{
     }
   }
 }
+body.has-permanent-drawer--mini-variant{
+  @media screen and (min-width: $layout-screen-size-threshold + 1px) {
+    padding-left: 68px;
+  }
+}
+
 body.has-permanent-drawer.is-drawer-open{
   @media screen and (min-width: $layout-screen-size-threshold + 1px) {
     padding-left: $layout-drawer-narrow;

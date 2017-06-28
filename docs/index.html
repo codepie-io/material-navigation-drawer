@@ -32,7 +32,7 @@
 </head>
 <body class="has-fixed-header">
 
-<aside class="md-drawer" id="drawer-1">
+<aside class="md-drawer" id="drawer-1" data-permanent="true" data-mini-variant="true">
     <div class="md-drawer__shadow"></div>
     <div class="md-drawer__surface">
         <header class="hidden--gt-sm md-drawer-header">
@@ -117,7 +117,7 @@
 <section class="" id="app">
     <div class="md-container">
         <div class="md-row">
-            <div class="md-col layout-m-t-2 md-col--12">
+            <div class="md-col md-col--12">
 
             </div>
         </div>
@@ -129,11 +129,11 @@
 <script src="../resources/assets/js/drawer.js"></script>
 <script>
     $(function(){
-       $('#drawer-1').MaterialDrawer({
-           permanent: false,
-           fullHeight: false,
+      /* $('#drawer-1').MaterialDrawer({
+           /!*permanent: true,*!/
+          /!* fullHeight: false,*!/
            miniVariant: false
-       })
+       })*/
     });
 </script>
 </body>

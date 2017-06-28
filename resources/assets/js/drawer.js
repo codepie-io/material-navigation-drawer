@@ -27,8 +27,6 @@
             this.startX_ = 0;
             this.currentX_ = 0;
             this.touchingDrawer_ = false;
-            this.xDown__ = 0;
-            this.yDown__ = 0;
             this.currentXUp_ = 0;
             this.currentYUp_ = 0;
             this.startTime_ = 0;
@@ -62,6 +60,7 @@
             PERMANENT_FULL_HEIGHT: 'md-drawer--permanent-full-height',
             PERMANENT_MINI_VARIANT: 'md-drawer--permanent-mini-variant',
             BODY_PERMANENT_FULL_HEIGHT: 'has-permanent-drawer--full-height',
+            BODY_MINI_VARIANT: 'has-permanent-drawer--mini-variant',
             PERMANENT_FLOATING: 'has-permanent-floating-drawer'
         };
 
@@ -104,7 +103,6 @@
         MaterialDrawer.prototype['show'] = MaterialDrawer.prototype.show;
 
         MaterialDrawer.prototype.hide = function () {
-            //|| (this.config.permanent && $(window).width()>959)
             if (!this.isShown_ || this.isAnimating_)
                 return;
             this.$drawer_.trigger(Event.HIDE);
@@ -133,6 +131,7 @@
                         this.$drawer_.addClass(this.Classes_.PERMANENT_FULL_HEIGHT)
                     }
                     if (this.config.miniVariant) {
+                        $body.addClass(this.Classes_.BODY_MINI_VARIANT);
                         this.$drawer_.addClass(this.Classes_.PERMANENT_MINI_VARIANT)
                     }
                 }
@@ -190,7 +189,7 @@
                     if (xDiff > 60 && (Math.abs(this.startTime_ - this.endTime_) > 0) && (Math.abs(this.startTime_ - this.endTime_) < 100)) {
                         this.hide();
                         this.xDown_ = 0;
-                        this.yDown_ = 0;
+                        
                         this.startTime_ = 0;
                         this.endTime_ = 0;
                         return;
@@ -211,7 +210,7 @@
                 }
             }
             this.xDown_ = 0;
-            this.yDown_ = 0;
+            
 
             if ((translateX < 0) && (translateX < -140)) {
                 this.hide();
@@ -230,7 +229,7 @@
             this.startTime_ = Math.floor(Date.now());
             if (this.$drawer_.hasClass(this.Classes_.IS_VISIBLE))
                 return;
-            this.$drawer_.addClass(this.Classes_.IS_SWIPING)
+            this.$drawer_.addClass(this.Classes_.IS_SWIPING);
             this.startX_ = e.originalEvent.touches[0].pageX;
             this.currentX_ = this.startX_;
             this.touchingSwipe_ = true;
@@ -255,35 +254,16 @@
             this.endTime_ = Math.floor(Date.now());
             var xDiff = this.xDown_ - this.currentXUp_;
             var yDiff = this.yDown_ - this.currentYUp_;
-
-            /*if (Math.abs(xDiff) > Math.abs(yDiff)) {
-                if (xDiff > 0) {
-                    if (xDiff > 60 && (Math.abs(this.startTime_ - this.endTime_) > 0) && (Math.abs(this.startTime_ - this.endTime_) < 100)) {
-                        this.hide();
-                        this.xDown_ = 0;
-                        this.yDown_ = 0;
-                        this.startTime_ = 0;
-                        this.endTime_ = 0;
-                        return;
-                    }
-                } else {
-                    /!* right swipe *!/
-                    console.log('right swipe');
-                    console.log(Math.abs(this.startTime_ - this.endTime_));
-                    //if(Math.abs(this.startTime_ - this.endTime_) > )
-                }
-            } else {
-                if (yDiff > 0) {
-                    /!* up swipe *!/
-                    console.log('up swipe')
-                } else {
-                    /!* down swipe *!/
-                    console.log('down swipe')
+            if (Math.abs(xDiff) > Math.abs(yDiff)) {
+                if (xDiff > 60 && (Math.abs(this.startTime_ - this.endTime_) > 0) && (Math.abs(this.startTime_ - this.endTime_) < 100)) {
+                    this.show();
+                    this.xDown_ = 0;
+                    this.startTime_ = 0;
+                    this.endTime_ = 0;
+                    return;
                 }
             }
             this.xDown_ = 0;
-            this.yDown_ = 0;*/
-
             if ((translateX > 140)) {
                 this.show();
             } else {
