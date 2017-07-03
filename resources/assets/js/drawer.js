@@ -87,6 +87,7 @@
                 this.setDrawerClass_();
                 this.setSwipeGesture_();
                 (this.config.show && config !== 'string') ? this.show() : '';
+                this.setBodyClass_()
             }
         };
 
@@ -97,7 +98,8 @@
             this.$drawer_.addClass(this.Classes_.DRAWER_ANIMATING).addClass(this.Classes_.IS_VISIBLE);
             this.isAnimating_ = true;
             this.isShown_ = true;
-            this.setBodyClass_();
+            var $body = $('body');
+            $body.addClass(this.Classes_.BODY_CLASS);
             this.$drawer_.on('transitionend', this.boundOnTransitionEnd_);
         };
         MaterialDrawer.prototype['show'] = MaterialDrawer.prototype.show;
@@ -110,6 +112,8 @@
             this.setBodyClass_();
             this.$drawer_.addClass(this.Classes_.DRAWER_ANIMATING)
                 .removeClass(this.Classes_.IS_VISIBLE);
+            var $body = $('body');
+            $body.removeClass(this.Classes_.BODY_CLASS);
             this.$drawer_.on('transitionend', this.boundOnTransitionEnd_)
         };
         MaterialDrawer.prototype['hide'] = MaterialDrawer.prototype.hide;
@@ -121,22 +125,16 @@
 
         MaterialDrawer.prototype.setBodyClass_ = function () {
             var $body = $('body');
-            console.log(this.isShown_);
-            if (this.isShown_) {
-                $body.addClass(this.Classes_.BODY_CLASS);
-                if (this.config.permanent) {
-                    this.$drawer_.addClass(this.config.BODY_PERMANENT);
-                    if (this.config.fullHeight) {
-                        $body.addClass(this.Classes_.BODY_PERMANENT_FULL_HEIGHT);
-                        this.$drawer_.addClass(this.Classes_.PERMANENT_FULL_HEIGHT)
-                    }
-                    if (this.config.miniVariant) {
-                        $body.addClass(this.Classes_.BODY_MINI_VARIANT);
-                        this.$drawer_.addClass(this.Classes_.PERMANENT_MINI_VARIANT)
-                    }
+            if (this.config.permanent) {
+                this.$drawer_.addClass(this.config.BODY_PERMANENT);
+                if (this.config.fullHeight) {
+                    $body.addClass(this.Classes_.BODY_PERMANENT_FULL_HEIGHT);
+                    this.$drawer_.addClass(this.Classes_.PERMANENT_FULL_HEIGHT)
                 }
-            } else {
-                $body.removeClass(this.Classes_.BODY_CLASS);
+                if (this.config.miniVariant) {
+                    $body.addClass(this.Classes_.BODY_MINI_VARIANT);
+                    this.$drawer_.addClass(this.Classes_.PERMANENT_MINI_VARIANT)
+                }
             }
         };
 

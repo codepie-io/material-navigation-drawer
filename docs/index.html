@@ -32,7 +32,7 @@
 </head>
 <body class="has-fixed-header">
 
-<aside class="md-drawer" id="drawer-1" data-permanent="true" data-mini-variant="true">
+<aside class="md-drawer" id="drawer-1" data-permanent="true" data-mini-variant="true" data-show="false">
     <div class="md-drawer__shadow"></div>
     <div class="md-drawer__surface">
         <header class="hidden--gt-sm md-drawer-header">
@@ -129,11 +129,12 @@
 <script src="../resources/assets/js/drawer.js"></script>
 <script>
     $(function(){
-      /* $('#drawer-1').MaterialDrawer({
-           /!*permanent: true,*!/
-          /!* fullHeight: false,*!/
-           miniVariant: false
-       })*/
+       $('#drawer-1').MaterialDrawer({
+           permanent: true,
+           show: false,
+          /* fullHeight: false,*/
+           miniVariant: true
+       })
     });
 </script>
 </body>
