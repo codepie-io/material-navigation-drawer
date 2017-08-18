@@ -11,6 +11,7 @@
   height: 100%;
   overflow: hidden;
   z-index: -1;
+  pointer-events: none;
 
   &__shadow{
     content: '';
@@ -53,22 +54,6 @@
     overflow-y: auto;
 
     z-index: 5;
-  }
-
-  &--visible{
-    pointer-events: auto;
-    z-index: 20;
-
-    & .md-drawer__shadow {
-      opacity: 1;
-      pointer-events: auto;
-      z-index: 4;
-    }
-
-    & .md-drawer__surface{
-      transform: translateX(0);
-    }
-
   }
 
   &--animating{
@@ -205,6 +190,22 @@
     }
   }
 
+  &--visible{
+    pointer-events: auto;
+    z-index: 20;
+
+    & .md-drawer__shadow {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 4;
+    }
+
+    & .md-drawer__surface{
+      transform: translateX(0);
+    }
+
+  }
+
   & .md-navigation {
     flex-direction: column;
     align-items: stretch;
@@ -306,7 +307,8 @@
   flex-direction: column;
 }
 
-.md-drawer-navigation__item {
+.md-drawer {
+  .md-drawer-navigation__item {
   font-weight: 500;
   flex-shrink: 0;
   padding-left: 16px;
@@ -356,7 +358,7 @@
   }
 
 }
-
+}
 .md-drawer-swipe{
   position: fixed;
   top:0;
