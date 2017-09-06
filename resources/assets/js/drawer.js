@@ -276,7 +276,7 @@
 
         MaterialDrawer.prototype.onTransitionEnd_ = function () {
             this.$drawer_.removeClass(this.Classes_.DRAWER_ANIMATING);
-            this.isAnimating_?this.isAnimating_=false:'';
+            this.isAnimating_ ? this.isAnimating_ = false:'';
             //this.is?this.isAnimating_=false:'';
             this.$drawerSurface_.unbind('transitionend', this.boundOnTransitionEnd_);
             if (this.isShown_) {

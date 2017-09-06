@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Drawer | Material Design | CodeArtisan</title>
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Drawer | Material Design | CodeArtisan">
+    <meta name="theme-color" content="#4caf50">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Navigation Drawer">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#43a047">
+
+    <!-- Tile icon for Win8 -->
+    <meta name="msapplication-TileColor" content="#4caf50">
+    <meta name="msapplication-navbutton-color" content="#43a047">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Material+Icons' rel='stylesheet' type='text/css'>
+    <link href="css/app.css" rel="stylesheet">
+    <link href="css/drawer.css" rel="stylesheet">
+    <link href="css/docs.css" rel="stylesheet">
+    <link href="vendor/highlight/styles/vs.css" rel="stylesheet">
+</head>
+<body class="md-align--center-center md-align" style="min-height: 100vh">
+
+
+<button class="md-button md-button--primary md-button--raised" id="">
+    Paint
+</button>
+
+
+
+<script src="js/jquery.js"></script>
+<script src="temp.js"></script>
+<script>
+
+    $(function () {
+        $('.md-button').MaterialDrawer({
+            'darkBackground': '#3F51B5',
+            'lightBackground': '#F48FB1'
+        })
+    })
+
+</script>
+</body>
+</html>
